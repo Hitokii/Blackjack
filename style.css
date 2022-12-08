@@ -1,0 +1,23 @@
+body {
+          background-color: #151313;
+          color: white;
+          font-family: monospace;
+}
+
+button {
+          border: 1pt solid #806060 ;
+          border-radius: 55px;
+          padding: 40px;
+          background-color: #806060;
+          color: black;
+          font-family: monospace;
+          font-size: 35px;
+          margin-bottom: 10%;
+          transition: 300ms color;
+}
+
+button:hover {
+          background-color: #907070;
+          color: white;
+          cursor: pointer;
+}

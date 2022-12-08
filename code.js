@@ -126,7 +126,6 @@ async function stop() {
   await bot();
 }
 
-// reload function after 5s
 async function reload() {
   setTimeout(function () {
     location.reload();

@@ -84,6 +84,11 @@ async function bot() {
     if (data.cards[0].value === "KING") data.cards[0].value = 10;
     if (data.cards[0].value === "ACE") data.cards[0].value = 11;
     bot_score = bot_score + parseInt(data.cards[0].value);
+    // show the bot card on the page before breaking one line only
+    const card_image = data.cards[0].image;
+    const img = document.createElement("img");
+    img.src = card_image;
+    document.body.appendChild(img);
   }
   if (bot_score > 21) {
     const h1 = document.querySelector("h1");
@@ -109,6 +114,16 @@ async function bot() {
     remove_buttons();
     reload();
   }
+}
+
+// stop function that add a horizontal divider an h2 "the bot :" and start bot()
+async function stop() {
+  const hr = document.createElement("hr");
+  const h2 = document.createElement("h2");
+  h2.innerText = "The bot :";
+  document.body.appendChild(hr);
+  document.body.appendChild(h2);
+  await bot();
 }
 
 // reload function after 5s
